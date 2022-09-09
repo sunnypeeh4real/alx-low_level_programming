@@ -1,4 +1,4 @@
 #!/bin/bash
-gcc -S $CFILE -masm = intel:
+gcc -S -masm = intel $CFILE
 
 
