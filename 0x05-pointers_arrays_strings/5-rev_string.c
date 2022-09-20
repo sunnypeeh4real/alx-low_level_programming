@@ -1,27 +1,28 @@
-/**                                                             
- * rev_string - reverses a string                               
- *                                                              
- * @s: string parameter input                                   
- *                                                              
- * Return: Nothing                                              
-*/                                                              
-                                                                
-void rev_string(char *s)                                        
-{                                                               
-        int l, i;                                               
-        char ch;                                                
-                                                                
-        /*find string length without null char*/                
-        for (l = 0; s[l] != '\0'; ++l)                          
-                ;                                               
-                                                                
-        /*swap the string by looping to half the string*/       
-        for (i = 0; i < l / 2; ++i)                             
-        {                                                       
-                ch = s[i];                                      
-                s[i] = s[l - 1 - i]; /*-1 because the array star
-ts from 0*/                                                     
-                s[l - 1 - i] = ch;                              
-        }                                                       
-                                                                
-}          
+#include "main.h"
+
+/**
+ * rev_string - prints a string in reverse
+ * @s: the used string to beb reversed
+ * Return: 0
+ */
+
+void rev_string(char *s)
+{
+	int len, i, half;
+	char temp;
+
+	for (len = 0; s[len] != '\0'; len++)
+	;
+	i = 0;
+	half = len / 2;
+
+	while (half--)
+	{
+		temp = s[len - i - 1];
+		s[len - i - 1] = s[i];
+		s[i] = temp;
+		i++;
+	}
+}
+
+
